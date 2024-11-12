@@ -1,0 +1,17 @@
+name: Deployment
+
+on:
+ push :
+ branches :[master]
+
+
+jobs:
+  build:
+    runs-on :ubuntu-latest
+    steps:
+    -uses :actions/checkout@v2
+    with:
+    GITHUB_TOKEN:${{secrets.GITHUB_TOKEN}}
+    BRANCH : gh-pages
+    FOLDER: .
+
